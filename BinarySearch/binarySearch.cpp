@@ -1,11 +1,15 @@
-//********************************************************************
-
+/*----------------------------------------------------------------------
 [1] Basic Binary Search
 
 	Given a sorted array and target , find the index of first occurance
 	of target in array.
 
-//********************************************************************
+----------------------------------------------------------------------*/
+#include<iostream>
+#include<vector>
+
+using std::vector;
+using std::cout;
 
 int binarySearch( const vector<int>& input, const int& target )
 {
