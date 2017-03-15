@@ -6,5 +6,3 @@ This repository will include variety of things incuding,
   * Coding concepts
   * System design
   * Better practices
-  
-Any input/suggestions are welcome.
