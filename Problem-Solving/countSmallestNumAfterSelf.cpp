@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------
-[1] Count of Smaller Numbers After Self
+ Count of Smaller Numbers After Self
 
 You are given an integer array nums and you have to return a new counts array.
 The counts array has the property where counts[i] is the number of smaller

@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------
-[1] Count of Smaller Numbers After Self
+Count of Range Sum
 
 Given an integer array nums, return the number of range sums that lie in
 [lower, upper] inclusive. Range sum S(i, j) is defined as the sum of the elements
