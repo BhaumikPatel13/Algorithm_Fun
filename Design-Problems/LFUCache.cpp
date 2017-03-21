@@ -5,23 +5,21 @@
  get(key) - Get the value (will always be positive) of the key if the key
             exists in the cache, otherwise return -1.
  put(key, value) - Set or insert the value if the key is not already present.
- 	 	 	 	 When the cache reaches its capacity, it should invalidate the
- 	 	 	 	 least frequently used item before inserting a new item.
- 	 	 	 	 For the purpose of this problem, when there is a tie
- 	 	 	 	 (i.e., two or more keys that have the same frequency),
- 	 	 	 	 the least recently used key would be evicted.
+  	 	 When the cache reaches its capacity, it should invalidate the
+ 	 	 least frequently used item before inserting a new item.
+ 	 	 For the purpose of this problem, when there is a tie
+ 	 	 (i.e., two or more keys that have the same frequency),
+ 	 	 the least recently used key would be evicted.
 
  Idea : data structures used : Two doubly linked list, unordered_map.
 
- m_freqList --> F1 -> F3 -> F4  : Nodes in this list indicates Frequency.
- 	 !	 	 	 !	   !     !	  (for example, F3 with frequency=3 )
- 	 !			 !	   !     !
- 	 V           v     v     v
- key,val List	 N2    N4    N5
- 	 	 	 	 !
- 	 	 	 	 !
- 	 	 	 	 v
- 	 	 	 	 N3
+ m_freqList: head -> F1 -> F3 -> F4  : Nodes in this list indicates Frequency.
+
+ Each node in m_freqList also points to another list 'm_values' with (key,value) nodes.
+
+ F1 : head --> N2 -> N3
+ F3 : head --> N4
+ F4 : head --> N5
 
  Here, N2 and N3 are (key-value) nodes with frequency = 1
  	   N4 with frequency = 3
