@@ -116,7 +116,7 @@ private:
     /* Recursive function to perform DFS on given graph. Terminate when start and end matches.     *
      */
 
-    void dsfGraph(string& start, string& end, unordered_map<string, vector<string>>& graph,
+    void dfsGraph(string& start, string& end, unordered_map<string, vector<string>>& graph,
                   vector<vector<string>>& result, vector<string>& singleLadder )
     {
        if( start == end )
@@ -128,7 +128,7 @@ private:
        for( auto s: graph[start] )
        {
           singleLadder.push_back(s);
-          dsfGraph( s, end, graph, result, singleLadder);
+          dfsGraph( s, end, graph, result, singleLadder);
           singleLadder.pop_back();
        }
     }
@@ -183,7 +183,7 @@ public:
        {
           vector<string> ladder;
           ladder.push_back( beginWord );
-          dsfGraph( beginWord, endWord, graph, result, ladder );
+          dfsGraph( beginWord, endWord, graph, result, ladder );
        }
 
        return result;
