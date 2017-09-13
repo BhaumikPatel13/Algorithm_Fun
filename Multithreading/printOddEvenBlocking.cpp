@@ -45,6 +45,7 @@ public:
 			unique_lock<mutex> lck(mt);
 			cond.wait(lck, [=](){ return n%2==1;} );
 			cout << n++ << endl;
+			lck.unlock();
 			cond.notify_one();
 		}
 	}
@@ -56,6 +57,7 @@ public:
 			unique_lock<mutex> lck(mt);
 			cond.wait(lck, [=](){ return n%2==0;} );
 			cout << n++ << endl;
+			lck.unlock();
 			cond.notify_one();
 		}
 	}
